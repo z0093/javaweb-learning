@@ -1,0 +1,3 @@
+# 项目排除路径
+/class01-servlet/target/
+/class02-request/target/

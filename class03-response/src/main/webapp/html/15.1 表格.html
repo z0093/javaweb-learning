@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表格样式设置</title>
+
+        <style>
+        table,th,td{
+        border:1px solid;
+        }
+        th,td{
+        padding:10px 20px;
+        }
+        tr:nth-child(odd){
+        background-color: #eee;
+        }
+        tr th{
+            background-color: #26ff00;
+        }
+        </style>
+        </head>
+<body>
+<table>
+    <caption>借阅详情</caption>
+    <tr><th>编号</th><th>书名</th><th>借阅时间</th><th>应还时间</th><th>借阅人</th></tr>
+    <tr><td>T0976</td><td>计算机基础</td><td>2018/10/05</td><td>2018/11/05</td><td rowspan="2">张三</td></tr>
+    <tr><td>T0933</td><td>C语言程序设计</td><td>2018/10/12</td><td>2018/11/12</td></tr>
+    <tr><td>T0155</td><td>网页设计与制作</td><td>2018/10/05</td><td>2018/11/05</td><td>李四</td></tr>
+    <tr><td>T0159</td><td>操作系统</td><td>2018/10/05</td><td>2018/12/05</td><td>王五</td></tr>
+</table>
+
+</body>
+</html>
