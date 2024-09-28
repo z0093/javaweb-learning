@@ -31,10 +31,7 @@ public class VerifyCode extends HttpServlet {
             Font font = new Font("Times New Roman", Font.BOLD, 40);
             g.setFont(font);
             g.drawString(ch+"", width/5*i, height);
-
         }
-
-
         for (int i = 0; i < 10; i++) {
             int x1 = random.nextInt(width);
             int y1 = random.nextInt(height);
