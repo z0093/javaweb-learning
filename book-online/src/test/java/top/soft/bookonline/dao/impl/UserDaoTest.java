@@ -1,12 +1,8 @@
 package top.soft.bookonline.dao.impl;
 
-import org.junit.jupiter.api.Test;
-import top.soft.bookonline.dao.UserDao;
-import top.soft.bookonline.entity.User;
-
 class UserDaoTest {
-/*
-    @Test
+
+ /*   @Test
     void insertUser() {
         UserDao userDao = new UserDaoImpl();
         User user = User.builder().nickname("user39").password("123456").address("江苏南京")

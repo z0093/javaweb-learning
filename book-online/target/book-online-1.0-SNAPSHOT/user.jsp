@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page import="top.soft.bookonline.entity.User" %>
+<%@ page import="java.time.LocalDateTime" %>
+<%@ page import="java.time.format.DateTimeFormatter" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 
 <html>
@@ -144,6 +146,9 @@
 <%
     User user = (User) request.getSession().getAttribute("user");
     request.setAttribute("user", user);
+    LocalDateTime dateTime=user.getCreateTime();
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+    String formattedDate = dateTime.format(formatter);
 %>
 
 <%--顶部区域，引入共用的top.jsp页面--%>
@@ -214,7 +219,7 @@
                     <div>
                         <p>常居：${user.address}</p>
                         <p>账号：${user.account}</p>
-                        <p>${user.createTime}加入</p>
+                        <p> <%=formattedDate %>加入 </p>
                     </div>
                 </div>
                 <h4>${user.nickname}</h4>

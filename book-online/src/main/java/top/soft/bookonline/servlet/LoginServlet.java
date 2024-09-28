@@ -3,10 +3,7 @@ package top.soft.bookonline.servlet;
 import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
+import jakarta.servlet.http.*;
 import top.soft.bookonline.service.UserService;
 import top.soft.bookonline.service.impl.UserServiceImpl;
 import top.soft.bookonline.entity.User;
@@ -25,6 +22,7 @@ public class LoginServlet extends HttpServlet {
         //获取表单数据
         String account = req.getParameter("account");
         String password = Md5Util.crypt(req.getParameter("password"));
+        String remember = req.getParameter("remember");
         //调用登录功能
         User user = userService.signIn(account, password);
         if (user != null) {
@@ -32,8 +30,17 @@ public class LoginServlet extends HttpServlet {
             HttpSession session = req.getSession();
             session.setAttribute("user", user);
             //重定向回到/index,进入 IndexServlet
+            if (remember != null) {
+                Cookie usernameCookie = new Cookie("username", account);
+                Cookie passwordCookie = new Cookie("password", password);
+                usernameCookie.setMaxAge(60 * 60 * 24 * 7);
+                passwordCookie.setMaxAge(60 * 60 * 24 * 7);
+                resp.addCookie(usernameCookie);
+                resp.addCookie(passwordCookie);
+            }
             resp.sendRedirect("/index");
-        } else {
+        }
+        else {
             //登录失败,设置好响应对象字符集和响应类型
             resp.setContentType("text/html;charset=UTF-8");
             resp.setCharacterEncoding("UTF-8");
