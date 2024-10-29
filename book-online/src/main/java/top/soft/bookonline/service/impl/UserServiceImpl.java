@@ -17,12 +17,15 @@ public class UserServiceImpl implements UserService {
     @Override
     public User signIn(String account, String password) {
         User user = User.builder().account(account).password(password).build();
+        System.out.println(user.getPassword());
+        System.out.println(user.getAccount());
         return userDao.findUser(user);
     }
 
     @Override
     public int register(String account, String password) {
         User user = User.builder().account(account).password(password).build();
+        System.out.println("注册密码"+user.getPassword());
         return userDao.insertUser(user);
     }
 }

@@ -26,7 +26,7 @@ public class UserDaoImpl implements UserDao {
                     String sql = "SELECT * FROM t_user WHERE account = ? AND password = ?";
                     //2、调用 query 方法,比对账号和加密后的密码
                     return jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<>
-                            (User.class), userDto.getAccount(), userDto.getPassword());
+                            (User.class), userDto.getAccount(),  userDto.getPassword());
                 } catch (DataAccessException e) {
                     e.printStackTrace();
                     return null;
