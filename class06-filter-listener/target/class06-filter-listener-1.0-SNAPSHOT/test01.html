@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>药店管理系统</title>
+    <style>
+        /* 整体页面布局 */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* 顶部导航栏 */
+        .header {
+            background-color:#5bc0de;
+            color: white;
+            padding: 10px;
+            text-align: left;
+        }
+
+        /* 新添加的标题栏 */
+        .title {
+            background-color: #45a6a6;
+            padding: 5px;
+            text-align: right;
+        }
+
+        .sidebar {
+            background-color: #F8F9FA;
+            width: 200px;
+            height: 100vh;
+            float: left;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar li {
+            padding: 10px;
+            border-bottom: 1px solid #E9ECEF;
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        /* 主要内容区域 */
+        .main-title {
+            margin-left: 200px;
+            padding: 20px;
+            background-color: #ECECEC;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+<!-- 顶部导航栏 -->
+<div class="header">
+    <h1>药店管理系统</h1>
+</div>
+<div class="title">
+    欢迎用户：51192101291 <a href="#">设置</a> <a href="#">退出</a>
+</div>
+<!-- 侧边栏菜单 -->
+<div class="sidebar">
+    <ul>
+        <li>首页</li>
+        <li>基本档案管理</li>
+        <li>药品信息管理</li>
+        <li>进货入库管理</li>
+        <li>销售出库管理</li>
+        <li>报表统计</li>
+        <li>系统管理</li>
+    </ul>
+</div>
+
+<!-- 主要内容区域 -->
+<div class="main-content">
+<div class="main-title">
+    <h2>欢迎使用药店管理系统</h2>
+</div>
+    <form>
+        <label for="systemIntro">系统简介：</label>
+        <input type="text" id="systemIntro" value="系统简介内容">
+    </form>
+</div>
+
+</body>
+
+</html>
